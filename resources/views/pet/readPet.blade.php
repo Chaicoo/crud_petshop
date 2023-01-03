@@ -9,15 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="{{url('/css/read.css')}}">
-    <title>Veterinários</title>
+    <link rel="stylesheet" href="./css/read.css">
+    <title>Pets</title>
 </head>
 
 <body>
     <header>
         <div class="container limitWidth">
             <div class="logo">
-                <img src="{{url('/assets/logo.png')}}" alt="Petshop" />
+                <img src="assets/logo.png" alt="Petshop" />
             </div>
             <nav class="menu">
                 <ul>
@@ -35,30 +35,34 @@
             <thead>
                 <tr>
                     <th>Nome</th>
-                    <th>CRMV</th>
-                    <th>Telefone</th>
-                    <th>Ações</th>
+                    <th>Idade</th>
+                    <th>Raca</th>
+                    <th>Dono</th>
+                    <th>Acoes</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($vets as $vet)
+                @foreach($pets as $pet)
                 <tr>
-                    <td>{{$vet->Nome}}</td>
-                    <td>{{$vet->CRMV}}</td>
-                    <td>{{formatNumber($vet->Telefone)}}</td>
+                    <td>{{$pet->Nome}}</td>
+                    <td>{{$pet->Idade}}</td>
+                    <td>{{$pet->Raca}}</td>
+                    <td>{{$pet->NomeCliente}}</td>
                     <td class="collumButton">
-                            <a href="/editar-vet/{{ $vet -> idVeterinario }}" class="btnEdit">Editar</a>
-                            <a href='/delete-vet/{{ $vet -> idVeterinario }}' class="btnDelete">Apagar</a>
+                        <a href="/editar-pet/{{ $pet -> idPet }}" class="btnEdit">Editar</a>
+                        <a href='/delete-pet/{{ $pet -> idPet }}' class="btnDelete">Apagar</a>
                     </td>
                 </tr>
                 @endforeach
+
             </tbody>
         </table>
+
         <div class="container">
-            <a href="/adicionar-veterinario" class="btn">
-                Cadastrar Veterinário
-            </a>
+            <a href="/adicionar-pet" class="btn">Cadastrar</a>
         </div>
+
+
     </main>
 </body>
 

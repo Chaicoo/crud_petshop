@@ -16,24 +16,6 @@ class AttendanceController{
         return view('atendimento.readAttendance', compact('attendances'));
     }
 
-    /*
-    public function readPets(){
-        $pets = \DB::table('Pet')
-        ->select ('idPet','Nome')
-        ->get();
-
-        return view('atendimento.addAttendance', compact('pets'));
-    }
-
-    public function readVets(){
-        $vets = \DB::table('Veterinario')
-        ->select ('idVeterinario','Nome')
-        ->get();
-
-        return view('atendimento.addAttendance', compact('vets'));
-    }
-    */
-
     public function create(){
         $pets = \DB::table('Pet')
         ->select ('idPet','Nome')
@@ -58,12 +40,20 @@ class AttendanceController{
     }
 
     public function edit($idAtendimento){
+        $pets = \DB::table('Pet')
+        ->select ('idPet','Nome')
+        ->get();
+
+        $vets = \DB::table('Veterinario')
+        ->select ('idVeterinario','Nome')
+        ->get();
+
         $attendance = \DB::table('Atendimento')
         ->select('*')
         ->whereRaw('idAtendimento = ?', [$idAtendimento])
         ->get();
 
-        return view('atendimento.editAttendance',  compact('attendance'));
+        return view('atendimento.editAttendance',  compact('attendance', 'pets', 'vets'));
     }
 
     public function update(Request $request){

@@ -44,8 +44,8 @@
                 @foreach($clients as $client)
                 <tr>
                     <td>{{$client->Nome}}</td>
-                    <td>{{$client->CPF}}</td>
-                    <td>{{$client->Telefone}}</td>
+                    <td>{{formatCpf($client->CPF)}}</td>
+                    <td>{{formatNumber($client->Telefone)}}</td>
                     <td class="collumButton">
                             <a href="/editar-cliente/{{ $client -> Id }}" class="btnEdit">Editar</a>
                             <a href='/delete-cliente/{{ $client -> Id }}' class="btnDelete">Apagar</a>
@@ -56,7 +56,6 @@
         </table>
         <div class="container">
             <a href="/adicionar-cliente" class="btn">
-                <img src='assets/icons/add-circle-line.png' alt="">
                 Cadastrar Cliente
             </a>
         </div>

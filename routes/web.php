@@ -6,6 +6,7 @@ use App\Models\Veterinario;
 use App\Http\Controllers\VetController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\PetController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
