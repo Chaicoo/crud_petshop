@@ -37,6 +37,7 @@
                     <th>Nome</th>
                     <th>Idade</th>
                     <th>Raca</th>
+                    <th>Especie</th>
                     <th>Dono</th>
                     <th>Acoes</th>
                 </tr>
@@ -46,6 +47,7 @@
                 <tr>
                     <td>{{$pet->Nome}}</td>
                     <td>{{$pet->Idade}}</td>
+                    <td>{{$pet->Especie}}</td>
                     <td>{{$pet->Raca}}</td>
                     <td>{{$pet->NomeCliente}}</td>
                     <td class="collumButton">

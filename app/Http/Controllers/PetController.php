@@ -9,7 +9,7 @@ class PetController{
     public function index(){
         $pets = \DB::table('Pet')
         ->join('Cliente', 'Pet.Cliente_id', '=', 'Cliente.Id')
-        ->select('Pet.idPet','Pet.Nome','Pet.Raca','Pet.Idade','Cliente.Nome as NomeCliente')
+        ->select('Pet.idPet','Pet.Nome','Pet.Raca','Pet.Especie','Pet.Idade','Cliente.Nome as NomeCliente')
         ->get();
 
         return view('pet.readPet', compact('pets'));
