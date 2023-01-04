@@ -40,6 +40,7 @@ Route::post('/cadastrar-atendimento', [AttendanceController::class, 'saveCreate'
 Route::get('/editar-atendimento/{Id}', [AttendanceController::class, 'edit']);
 Route::post('/save-edit-atendimento', [AttendanceController::class, 'update']);
 Route::get('/delete-atendimento/{Id}', [AttendanceController::class, 'delete']);
+Route::get('/concluir-atendimento/{Id}', [AttendanceController::class, 'conclude']);
 
 Route::get('/pets', [PetController::class, 'index']);
 Route::get('/adicionar-pet', [PetController::class, 'create']);

@@ -46,12 +46,12 @@
                 <tr>
                     <td>{{$attendance->Data}}</td>
                     <td>{{$attendance->Descricao}}</td>
-                    <td>{{$attendance->NomeVeterinario}}</td>
+                    <td>{{$attendance->NomeVet}}</td>
                     <td>{{$attendance->NomePet}}</td>
                     <td class="collumButton">
                         <a href="/editar-atendimento/{{ $attendance -> idAtendimento }}" class="btnEdit">Editar</a>
                         <a href='/delete-atendimento/{{ $attendance -> idAtendimento }}' class="btnDelete">Apagar</a>
-                        
+                        <a href="/concluir-atendimento/{{ $attendance -> idAtendimento }}" class="btnConclud">Concluir</a>
                     </td>
                 </tr>
                 @endforeach

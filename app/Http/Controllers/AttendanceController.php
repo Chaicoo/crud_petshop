@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 class AttendanceController{
     public function index(){
         $attendances = \DB::table('Atendimento')
-        ->join('Veterinario', 'Atendimento.idVeterinario', '=', 'Veterinario.idVeterinario')
         ->join('Pet', 'Atendimento.Pet_idPet', '=', 'Pet.idPet')
-        ->select('Atendimento.idAtendimento','Atendimento.Data','Atendimento.Descricao','Veterinario.Nome as NomeVeterinario','Pet.Nome as NomePet')
+        ->join('Veterinario', 'Atendimento.idVeterinario', '=', 'Veterinario.idVeterinario')
+        ->select('Atendimento.*', 'Pet.Nome as NomePet', 'Veterinario.Nome as NomeVet')
+        ->whereRaw('Atendimento.Status = ?', ['Active'])
         ->get();
 
         return view('atendimento.readAttendance', compact('attendances'));
@@ -69,6 +70,12 @@ class AttendanceController{
 
     public function delete($idAtendimento){
         \DB::table('Atendimento')->where('idAtendimento', $idAtendimento)->delete();
+
+        return redirect('/atendimentos');
+    }
+
+    public function conclude($idAtendimento){
+        \DB::table('Atendimento')->where('idAtendimento', $idAtendimento)->update(['Status' => 'Conclud']);
 
         return redirect('/atendimentos');
     }
