@@ -33,7 +33,6 @@
     <main>
         <form action='/cadastrar-atendimento' method="POST">
             @csrf
-            <input type="date" name="Data" placeholder="Data" required>
             <input type="text" name="Descricao" placeholder="Descrição" required>
             <select name="Pet_idPet" id="pet">
                 <option value="">Selecione o pet</option>

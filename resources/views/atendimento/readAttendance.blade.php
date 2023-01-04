@@ -46,7 +46,7 @@
                 <tr>
                     <td>{{$attendance->Data}}</td>
                     <td>{{$attendance->Descricao}}</td>
-                    <td>{{$attendance->NomeVet}}</td>
+                    <td>{{$attendance->NomeVeterinario}}</td>
                     <td>{{$attendance->NomePet}}</td>
                     <td class="collumButton">
                         <a href="/editar-atendimento/{{ $attendance -> idAtendimento }}" class="btnEdit">Editar</a>

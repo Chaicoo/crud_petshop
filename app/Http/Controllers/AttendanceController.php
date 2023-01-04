@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+date_default_timezone_set('America/Sao_Paulo');
+
 class AttendanceController{
     public function index(){
         $attendances = \DB::table('Atendimento')
         ->join('Pet', 'Atendimento.Pet_idPet', '=', 'Pet.idPet')
         ->join('Veterinario', 'Atendimento.idVeterinario', '=', 'Veterinario.idVeterinario')
-        ->select('Atendimento.*', 'Pet.Nome as NomePet', 'Veterinario.Nome as NomeVet')
+        ->select('Atendimento.*', 'Pet.Nome as NomePet', 'Veterinario.Nome as NomeVeterinario')
         ->whereRaw('Atendimento.Status = ?', ['Active'])
         ->get();
 
@@ -31,7 +33,7 @@ class AttendanceController{
 
     public function saveCreate(Request $request){
         \DB::table('Atendimento')->insert([
-            'Data' => $request->Data,
+            'Data' => date('Y-m-d H:i'),
             'Descricao' => $request->Descricao,
             'idVeterinario' => $request->idVeterinario,
             'Pet_idPet' => $request->Pet_idPet
@@ -79,6 +81,4 @@ class AttendanceController{
 
         return redirect('/atendimentos');
     }
-
-
 }

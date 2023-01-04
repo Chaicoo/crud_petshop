@@ -56,7 +56,7 @@ class PetController{
             'Especie' => $request->Especie,
             'Raca' => $request->Raca,
             'Idade' => $request->Idade,
-            'Cliente_Id' => $request->Cliente_Id
+            'Cliente_Id' => $request->Dono
         ]);
 
         return redirect('/pets');

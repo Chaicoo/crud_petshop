@@ -33,17 +33,16 @@
     <main>
         <form action="/save-edit-pet" method="POST">
             @csrf
-            <input type="hidden" name="idPet" value="{{$pets[0]->idPet}}">
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome" value="{{$pets[0]->Nome}}">
-            <label for="idade">Idade</label>
-            <input type="text" name="idade" id="idade" value="{{$pets[0]->Idade}}">
-            <label for="raca">Raça</label>
-            <input type="text" name="raca" id="raca" value="{{$pets[0]->Raca}}">
-            <label for="especie">Espécie</label>
-            <input type="text" name="especie" id="especie" value="{{$pets[0]->Especie}}">
-            <label for="dono">Dono</label>
-            <select name="dono" id="dono">
+            <label for="Nome">Nome</label>
+            <input type="text" name="Nome" id="Nome" value="{{$pets[0]->Nome}}">
+            <label for="Idade">Idade</label>
+            <input type="text" name="Idade" id="Idade" value="{{$pets[0]->Idade}}">
+            <label for="Raca">Raça</label>
+            <input type="text" name="Raca" id="Raca" value="{{$pets[0]->Raca}}">
+            <label for="Especie">Espécie</label>
+            <input type="text" name="Especie" id="Especie" value="{{$pets[0]->Especie}}">
+            <label for="Dono">Dono</label>
+            <select name="Dono" id="Dono">
                 @foreach($clients as $client)
                 <option value="{{$client->Id}}">{{$client->Nome}}</option>
                 @endforeach
