@@ -63,6 +63,7 @@ class PetController{
     }
 
     public function delete($id){
+        \DB::table('Atendimento')->where('Pet_idPet', $id)->delete();
         \DB::table('Pet')->where('idPet', $id)->delete();
 
         return redirect('/pets');

@@ -46,6 +46,13 @@ class ClientController{
     }
 
     public function delete($Id){
+        \DB::table('Atendimento')
+        ->join('Pet', 'Atendimento.Pet_idPet', '=', 'Pet.idPet')
+        ->join('Cliente', 'Cliente.Id', '=', 'Pet.Cliente_Id')
+        ->whereRaw('Atendimento.Pet_idPet = Pet.idPet AND Pet.Cliente_Id = ?', $Id)
+        ->delete();
+
+        \DB::table('Pet')->where('Cliente_Id', $Id)->delete();
         \DB::table('Cliente')->where('Id', $Id)->delete();
 
         return redirect('/clientes');

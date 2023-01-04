@@ -33,6 +33,7 @@
     <main>
         <form action="/save-edit-pet" method="POST">
             @csrf
+            <input type="hidden" name="idPet" value="{{$pets[0]->idPet}}">
             <label for="Nome">Nome</label>
             <input type="text" name="Nome" id="Nome" value="{{$pets[0]->Nome}}">
             <label for="Idade">Idade</label>
