@@ -21,7 +21,7 @@ class ClientController{
             'CPF' => $request->CPF,
             'Telefone' => $request->Telefone
         ]);
-    
+
         return redirect('/clientes');
     }
 
@@ -30,19 +30,18 @@ class ClientController{
         ->select('*')
         ->whereRaw('Id = ?', [$Id])
         ->get();
-    
-    
+
+
         return view('cliente.editClient',  compact('client'));
     }
 
     public function update(Request $request){
-        $veterinario = \DB::table('Cliente')
+        \DB::table('Cliente')
         ->where('Id', [$request->Id])
         ->update(['Nome' => $request->Nome,
                   'CPF' => $request->CPF,
                   'Telefone' => $request->Telefone]);
-    
-    
+
         return redirect('/clientes');
     }
 

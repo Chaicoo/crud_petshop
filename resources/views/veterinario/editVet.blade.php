@@ -21,11 +21,11 @@
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a href='../index.php'>Atendimentos</a></li>
-                    <li><a href='readClients.php'>Clientes</a></li>
-                    <li><a href='readPets.php'>Pets</a></li>
-                    <li><a href='/veterinarios/'>Veterinarios</a></li>
-                    <li><a href='readReport.php'>Relatórios</a></li>
+                    <li><a href='/atendimentos'>Atendimentos</a></li>
+                    <li><a href='/clientes'>Clientes</a></li>
+                    <li><a href='/pets'>Pets</a></li>
+                    <li><a href='/veterinarios'>Veterinarios</a></li>
+                    <li><a href='/report'>Relatórios</a></li>
                 </ul>
             </nav>
         </div>

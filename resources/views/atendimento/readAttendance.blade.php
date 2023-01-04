@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./css/read.css">
-    <title>Clientes</title>
+    <title>Atendimentos</title>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
                     <li><a href='/clientes'>Clientes</a></li>
                     <li><a href='/pets'>Pets</a></li>
                     <li><a href='/veterinarios'>Veterinarios</a></li>
-                    <li><a href='readReport.php'>Relatórios</a></li>
+                    <li><a href='/report'>Relatórios</a></li>
                 </ul>
             </nav>
         </div>
@@ -51,6 +51,7 @@
                     <td class="collumButton">
                         <a href="/editar-atendimento/{{ $attendance -> idAtendimento }}" class="btnEdit">Editar</a>
                         <a href='/delete-atendimento/{{ $attendance -> idAtendimento }}' class="btnDelete">Apagar</a>
+                        
                     </td>
                 </tr>
                 @endforeach

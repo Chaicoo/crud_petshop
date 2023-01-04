@@ -23,9 +23,9 @@
                 <ul>
                     <li><a href='/atendimentos'>Atendimentos</a></li>
                     <li><a href='/clientes'>Clientes</a></li>
-                    <li><a href='readPets.php'>Pets</a></li>
+                    <li><a href='/pets'>Pets</a></li>
                     <li><a href='/veterinarios'>Veterinarios</a></li>
-                    <li><a href='readReport.php'>Relatórios</a></li>
+                    <li><a href='/report'>Relatórios</a></li>
                 </ul>
             </nav>
         </div>
@@ -47,8 +47,8 @@
                     <td>{{formatCpf($client->CPF)}}</td>
                     <td>{{formatNumber($client->Telefone)}}</td>
                     <td class="collumButton">
-                            <a href="/editar-cliente/{{ $client -> Id }}" class="btnEdit">Editar</a>
-                            <a href='/delete-cliente/{{ $client -> Id }}' class="btnDelete">Apagar</a>
+                        <a href="/editar-cliente/{{ $client -> Id }}" class="btnEdit">Editar</a>
+                        <a href='/delete-cliente/{{ $client -> Id }}' class="btnDelete">Apagar</a>
                     </td>
                 </tr>
                 @endforeach

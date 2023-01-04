@@ -25,7 +25,7 @@
                     <li><a href='/clientes'>Clientes</a></li>
                     <li><a href='/pets'>Pets</a></li>
                     <li><a href='/veterinarios'>Veterinarios</a></li>
-                    <li><a href='readReport.php'>Relatórios</a></li>
+                    <li><a href='/report'>Relatórios</a></li>
                 </ul>
             </nav>
         </div>
@@ -47,8 +47,8 @@
                     <td>{{$vet->CRMV}}</td>
                     <td>{{formatNumber($vet->Telefone)}}</td>
                     <td class="collumButton">
-                            <a href="/editar-vet/{{ $vet -> idVeterinario }}" class="btnEdit">Editar</a>
-                            <a href='/delete-vet/{{ $vet -> idVeterinario }}' class="btnDelete">Apagar</a>
+                        <a href="/editar-vet/{{ $vet -> idVeterinario }}" class="btnEdit">Editar</a>
+                        <a href='/delete-vet/{{ $vet -> idVeterinario }}' class="btnDelete">Apagar</a>
                     </td>
                 </tr>
                 @endforeach

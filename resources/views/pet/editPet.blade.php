@@ -21,37 +21,36 @@
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a href='../index.php'>Atendimentos</a></li>
-                    <li><a href='readClients.php'>Clientes</a></li>
-                    <li><a href='readPets.php'>Pets</a></li>
-                    <li><a href='/veterinarios/'>Veterinarios</a></li>
-                    <li><a href='readReport.php'>Relatórios</a></li>
+                    <li><a href='/atendimentos'>Atendimentos</a></li>
+                    <li><a href='/clientes'>Clientes</a></li>
+                    <li><a href='/pets'>Pets</a></li>
+                    <li><a href='/veterinarios'>Veterinarios</a></li>
+                    <li><a href='/report'>Relatórios</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <form action="/save-edit-atendimento" method="POST">
+        <form action="/save-edit-pet" method="POST">
             @csrf
-            <input type="hidden" name="idAtendimento" value="{{$attendance[0]->idAtendimento}}">
-            <label for="Descricao">Descrição</label>
-            <input type="text" name="Descricao" value="{{$attendance[0]->Descricao}}">
-            <label for="Data">Data</label>
-            <input type="text" name="Data" value="{{$attendance[0]->Data}}">
-            <label for="Pet">Pet</label>
-            <select name="Pet_idPet" id="Pet">
-                @foreach($pets as $pet)
-                <option value="{{$pet->Pet_idPet}}">{{$pet->Nome}}</option>
-                @endforeach
-            </select>
-            <label for="Veterinario">Veterinário</label>
-            <select name="idVeterinario" id="Veterinario">
-                @foreach($vets as $vet)
-                <option value="{{$vet->idVeterinario}}">{{$vet->Nome}}</option>
+            <input type="hidden" name="idPet" value="{{$pets[0]->idPet}}">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" value="{{$pets[0]->Nome}}">
+            <label for="idade">Idade</label>
+            <input type="text" name="idade" id="idade" value="{{$pets[0]->Idade}}">
+            <label for="raca">Raça</label>
+            <input type="text" name="raca" id="raca" value="{{$pets[0]->Raca}}">
+            <label for="especie">Espécie</label>
+            <input type="text" name="especie" id="especie" value="{{$pets[0]->Especie}}">
+            <label for="dono">Dono</label>
+            <select name="dono" id="dono">
+                @foreach($clients as $client)
+                <option value="{{$client->Id}}">{{$client->Nome}}</option>
                 @endforeach
             </select>
             <button type="submit" class="btn">Salvar</button>
-        </form>
+            </div>
+            </div>
     </main>
 
 </body>

@@ -7,6 +7,8 @@ use App\Http\Controllers\VetController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\PetController;
+use App\Http\Controllers\ReportController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -45,3 +47,5 @@ Route::post('/cadastrar-pet', [PetController::class, 'saveCreate']);
 Route::get('/editar-pet/{Id}', [PetController::class, 'edit']);
 Route::post('/save-edit-pet', [PetController::class, 'update']);
 Route::get('/delete-pet/{Id}', [PetController::class, 'delete']);
+
+Route::get('/report', [ReportController::class, 'index']);

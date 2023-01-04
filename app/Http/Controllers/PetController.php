@@ -35,6 +35,33 @@ class PetController{
         return redirect('/pets');
     }
 
+    public function edit($idPet){
+        $clients = \DB::table('Cliente')
+        ->select ('Id','Nome')
+        ->get();
+
+        $pets = \DB::table('Pet')
+        ->select('*')
+        ->whereRaw('idPet = ?', [$idPet])
+        ->get();
+
+        return view('pet.editPet',  compact('pets', 'clients'));
+    }
+
+    public function update(Request $request){
+        \DB::table('Pet')
+        ->where('idPet', $request->idPet)
+        ->update([
+            'Nome' => $request->Nome,
+            'Especie' => $request->Especie,
+            'Raca' => $request->Raca,
+            'Idade' => $request->Idade,
+            'Cliente_Id' => $request->Cliente_Id
+        ]);
+
+        return redirect('/pets');
+    }
+
     public function delete($id){
         \DB::table('Pet')->where('idPet', $id)->delete();
 

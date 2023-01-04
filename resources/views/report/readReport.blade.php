@@ -9,15 +9,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ url('/css/edit.css') }}">
-    <title>Cadastrar veterinário</title>
+    <link rel="stylesheet" href="./css/read.css">
+    <title>Pets</title>
 </head>
 
 <body>
     <header>
         <div class="container limitWidth">
             <div class="logo">
-                <img src="{{url('/assets/logo.png')}}" alt="Petshop" />
+                <img src="assets/logo.png" alt="Petshop" />
             </div>
             <nav class="menu">
                 <ul>
@@ -31,15 +31,35 @@
         </div>
     </header>
     <main>
-        <form action='/cadastrar-vet' method="POST">
-            @csrf
-            <input type="text" name="Nome" placeholder="Nome" required>
-            <input type="text" name="CRMV" placeholder="CRMV" required>
-            <input type="text" name="Telefone" placeholder="Telefone" required>
-            <input type="submit" value="Salvar" class="btn">
-        </form>
+    <table>
+            <thead>
+                <tr>
+                    <th>Indice</th>
+                    <th>Dados</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Clientes cadastrados</td>
+                    <td>{{$clients}} Clientes</td>
+                </tr>
+                <tr>
+                    <td>Pets cadastrados</td>
+                    <td>{{$pets}} Pets</td>
+                </tr>
+                <tr>
+                    <td>Veterinarios cadastrados</td>
+                    <td>{{$vets}} Veterinarios</td>
+                </tr>
+                <tr>
+                    <td>Atendimentos abertos</td>
+                    <td>{{$attendancesActive}} Atendimentos</td>
+                </tr>
+                <tr>
+                    <td>Atendimentos concluidos</td>
+                    <td>{{$attendancesConcluded}} Atendimentos</td>
+                </tr>
     </main>
-
 </body>
 
 </html>
